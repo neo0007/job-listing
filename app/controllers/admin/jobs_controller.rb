@@ -36,7 +36,7 @@ class Admin::JobsController < ApplicationController
   def show
     @job = Job.find(params[:id])
   end
-  
+
   def destroy
     @job = Job.find(params[:id])
     @job.destroy
@@ -48,7 +48,7 @@ class Admin::JobsController < ApplicationController
   private
 
   def job_params
-    params.require(:job).permit(:title, :description)
+    params.require(:job).permit(:title, :description, :wage_upper_bound, :wage_lower_bound, :contact_email)
   end
 
 
